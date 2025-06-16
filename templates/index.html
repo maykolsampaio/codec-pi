@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evento Científico 2025</title>
+  <script>
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+  <!-- Pico.css com tema escuro -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Se estiver usando Flask, reverta para: <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" /> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li class="secondary"><a href="#inicio">CODEC-PI 2025</a></li>
+      </ul>
+      <ul class="menu-desktop">
+        <li><a href="#inicio" class="nav-link"><i class="fa-solid fa-home icon-nav icon-nav-home"></i> Início</a></li>
+        <li>
+          <details class="dropdown">
+            <summary role="button" class="outline"><i class="fa-solid fa-lightbulb icon-nav icon-nav-event"></i> O
+              Evento</summary>
+            <ul>
+              <li><a href="#sobre" class="nav-link"><i class="fa-solid fa-circle-info icon-nav icon-nav-about"></i>
+                  Sobre</a></li>
+              <li><a href="#local" class="nav-link"><i class="fa-solid fa-location-dot icon-nav icon-nav-location"></i>
+                  Local</a></li>
+              <li><a href="#palestrantes" class="nav-link"><i
+                    class="fa-solid fa-user-tie icon-nav icon-nav-speakers"></i> Palestrantes</a></li>
+              <li><a href="#hospedagem-alimentacao"><i class="fa-solid fa-bed icon-nav icon-nav-accommodation"></i>
+                  Hospedagem</a></li>
+              <li><a href="#piripiri-cidade-sede"><i class="fa-solid fa-map-location-dot icon-nav icon-nav-city"></i>
+                  Cidade Sede</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#programacao" class="nav-link"><i class="fa-solid fa-calendar-days icon-nav icon-nav-schedule"></i>
+            Programação</a></li>
+        <li>
+          <details class="dropdown">
+            <summary role="button" class="outline"><i
+                class="fa-solid fa-file-signature icon-nav icon-nav-submission"></i> Inscrição e Submissão</summary>
+            <ul>
+              <li><a href="#inscricao" class="nav-link"><i class="fa-solid fa-user-plus icon-nav icon-nav-register"></i>
+                  Inscrição</a></li>
+              <li><a href="#submissao" class="nav-link"><i class="fa-solid fa-file-upload icon-nav icon-nav-upload"></i>
+                  Submissão</a></li>
+              <li><a href="#certificados" class="nav-link"><i
+                    class="fa-solid fa-certificate icon-nav icon-nav-certs"></i> Certificados</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#contato" class="nav-link"><i class="fa-solid fa-envelope icon-nav icon-nav-contact"></i>
+            Contato</a></li>
+      </ul>
+
+      <details class="menu-mobile">
+        <summary><i class="fa-solid fa-bars text-white"></i> Menu</summary>
+        <ul>
+          <li>
+            <a href="#inicio">
+              <i class="fa-solid fa-house icon-nav icon-nav-home"></i> Início
+            </a>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <i class="fa-solid fa-circle-info icon-nav icon-nav-event"></i> O Evento
+              </summary>
+              <ul>
+                <li>
+                  <a href="#sobre">
+                    <i class="fa-solid fa-circle-info icon-nav icon-nav-about"></i> Sobre
+                  </a>
+                </li>
+                <li>
+                  <a href="#local">
+                    <i class="fa-solid fa-location-dot icon-nav icon-nav-location"></i> Local
+                  </a>
+                </li>
+                <li>
+                  <a href="#palestrantes">
+                    <i class="fa-solid fa-chalkboard-user icon-nav icon-nav-speakers"></i> Palestrantes
+                  </a>
+                </li>
+                <li><a href="#hospedagem-alimentacao"><i class="fa-solid fa-bed icon-nav icon-nav-accommodation"></i>
+                    Hospedagem</a></li>
+                <li><a href="#piripiri-cidade-sede"><i class="fa-solid fa-map-location-dot icon-nav icon-nav-city"></i>
+                    Cidade Sede</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="#programacao">
+              <i class="fa-solid fa-calendar-days icon-nav icon-nav-schedule"></i> Programação
+            </a>
+          </li>
+          <li>
+            <details>
+              <summary>
+                <i class="fa-solid fa-file-lines icon-nav icon-nav-submission"></i> Inscrição e Submissão
+              </summary>
+              <ul>
+                <li>
+                  <a href="#inscricao">
+                    <i class="fa-solid fa-user-pen icon-nav icon-nav-register"></i> Inscrição
+                  </a>
+                </li>
+                <li>
+                  <a href="#submissao">
+                    <i class="fa-solid fa-upload icon-nav icon-nav-upload"></i> Submissão
+                  </a>
+                </li>
+                <li>
+                  <a href="#certificados">
+                    <i class="fa-solid fa-award icon-nav icon-nav-certs"></i> Certificados
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="#contato">
+              <i class="fa-solid fa-envelope icon-nav icon-nav-contact"></i> Contato
+            </a>
+          </li>
+        </ul>
+      </details>
+
+      <ul>
+        <li class="secondary">
+          <button id="theme-toggle" aria-label="Alternar tema">
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="inicio" class="banner-section">
+      <article class="banners">
+        <div class="carousel-container">
+          <div class="carousel" id="carousel">
+            <div class="carousel-slide active" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/3b/c2/a6/lugar-mais-bonito-de.jpg?w=900&h=-1&s=1');">
+              <div class="carousel-caption">
+                <h2>Piripiri-PI</h2>
+                <p>Caldeirão e seu cartão postal</p>
+              </div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvKLuI8xIY3a6dpF9lbc5QW4yHUbydksomEQ&s');">
+              <div class="carousel-caption">
+                <h2>Piripiri - IFPI Campus Piripiri</h2>
+                <p>Local do Evento</p>
+              </div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqfrPjw5jlzmpAcxhA3H-gFoHa9IaVHq9iHw&s');">
+              <div class="carousel-caption">
+                <h2>CODEC-PI 2025</h2>
+                <p>Congresso de Desenvolvimento Científico e Tecnológico do IFPI</p>
+              </div>
+            </div>
+          </div>
+        
+          <button class="carousel-control prev" onclick="mudarSlide(-1)">&#10094;</button>
+          <button class="carousel-control next" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+      </article>
+      <article id="datas-importantes" class="datas-importantes-article">
+        <h3><i class="fa-solid fa-calendar-check icon-title icon-title-dates"></i> Datas Importantes</h3>
+        <div class="important-dates">
+          <div class="date-card">
+            <h4><i class="fa-solid fa-calendar-day icon-card icon-card-eventdate"></i> Realização do Evento</h4>
+            <p>10 a 11 de Setembro de 2025</p>
+          </div>
+          <div class="date-card">
+            <h4><i class="fa-solid fa-file-upload icon-card icon-card-submissiondate"></i> Período de Submissão</h4>
+            <p>01 de Junho a 20 de Agosto de 2025</p>
+          </div>
+          <div class="date-card">
+            <h4><i class="fa-solid fa-user-plus icon-card icon-card-regdate"></i> Período de Inscrição</h4>
+            <p>01 de Julho a 05 de Setembro de 2025</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="evento">
+      <h2 class="section-title"><span class="section-icon"><i
+            class="fa-solid fa-lightbulb icon-header icon-header-event"></i></span> O Evento</h2>
+      <article id="sobre">
+        <h3 class="article-title"><i class="fa-solid fa-info-circle icon-title icon-title-about"></i> Sobre</h3>
+        <p>O Evento Científico 2025 é um encontro acadêmico voltado para a divulgação de pesquisas, integração entre
+          estudantes e profissionais da área e promoção da ciência em diversas áreas do conhecimento.</p>
+      </article>
+
+      <article id="local">
+        <h3 class="article-title"><span class="article-icon"><i
+              class="fas fa-map-marker-alt icon-title icon-title-location"></i></span> Local</h3>
+        <p>O evento será realizado no IFPI Campus Piripiri:</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.6411158782807!2d-41.79635442502331!3d-4.289721595684236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x793a8252d47392f%3A0x139cb92f5ae08555!2sIFPI%20Campus%20Piripiri!5e0!3m2!1spt-BR!2sbr!4v1747076415835!5m2!1spt-BR!2sbr"
+          width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </article>
+
+      <article id="palestrantes">
+        <h3 class="article-title"><span class="article-icon"><i
+              class="fas fa-microphone icon-title icon-title-speakers"></i></span> Palestrantes</h3>
+        <div class="speakers-container">
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Ana Silva" class="speaker-image">
+            <h4 class="speaker-name">Ana Silva</h4>
+            <p class="speaker-bio">Especialista em Inteligência Artificial com mais de 10 anos de experiência em
+              desenvolvimento de soluções para empresas de tecnologia. Fundadora da Tech AI Solutions.</p>
+          </div>
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Ricardo Pereira" class="speaker-image">
+            <h4 class="speaker-name">Ricardo Pereira</h4>
+            <p class="speaker-bio">Professor de Ciência de Dados na Universidade Federal de Tecnologia. Autor de
+              diversos artigos científicos sobre Machine Learning e Big Data.</p>
+          </div>
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Juliana Costa" class="speaker-image">
+            <h4 class="speaker-name">Juliana Costa</h4>
+            <p class="speaker-bio">CEO da Inova Solutions, premiada por suas contribuições em transformação digital.
+              Palestrante internacional com foco em liderança e inovação tecnológica.</p>
+          </div>
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Carlos Mendes" class="speaker-image">
+            <h4 class="speaker-name">Carlos Mendes</h4>
+            <p class="speaker-bio">Especialista em Cibersegurança com certificações internacionais. Consultor de grandes
+              empresas e palestrante reconhecido na área de segurança da informação.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="hospedagem-alimentacao">
+        <h3 class="article-title"><i
+            class="fa-solid fa-bed icon-title icon-title-hotel icon-nav icon-nav-accommodation"></i> Hospedagem e
+          Alimentação</h3>
+        <p>Para melhor acomodação dos participantes, sugerimos algumas opções de hospedagem em Piripiri:</p>
+        <ul>
+          <li><strong>Hotel São João</strong> – Localizado no centro da cidade, com fácil acesso ao IFPI. Tel: (86)
+            99999-0000</li>
+          <li><strong>Pousada Eldorado</strong> – Aconchegante, ideal para estadias curtas. Tel: (86) 98888-1111</li>
+          <li><strong>Hotel Buganville</strong> – Conforto e tranquilidade com restaurante próprio. Tel: (86) 97777-2222
+          </li>
+        </ul>
+        <p>Opções recomendadas para almoço e jantar:</p>
+        <ul>
+          <li><strong>Restaurante Brisa do Sertão</strong> – Especializado em comidas regionais e self-service.</li>
+          <li><strong>Churrascaria o Galeroso</strong> – Excelente opção para quem aprecia carne assada.</li>
+          <li><strong>Pizzaria Veneza</strong> – Pizzas artesanais e ambiente familiar.</li>
+          <li><strong>Point do Açaí</strong> – Lanches rápidos e variedades com açaí.</li>
+        </ul>
+      </article>
+
+      <article id="piripiri-cidade-sede">
+        <h3 class="article-title"><i
+            class="fa-solid fa-map-location-dot icon-title icon-title-city icon-nav icon-nav-city"></i> Piripiri -
+          Cidade Sede</h3>
+        <p>Piripiri é um município do Piauí conhecido por sua rica cultura, gastronomia típica e belezas naturais.</p>
+        <p>Alguns pontos turísticos que podem ser visitados:</p>
+        <ul>
+          <li><strong>Parque Nacional de Sete Cidades</strong> – Formações rochosas únicas e trilhas ecológicas, a cerca
+            de 25 km da cidade.</li>
+          <li><strong>Serra dos Picos</strong> – Ideal para trilhas e contemplação da paisagem natural.</li>
+          <li><strong>Praça de Eventos Arimatea Carvalho</strong> – Espaço urbano com eventos e atrações locais.</li>
+        </ul>
+        <p>Gastronomia típica da cidade:</p>
+        <ul>
+          <li><strong>Maria Isabel com Paçoca</strong> – Prato típico piauiense, muito presente nos restaurantes locais.
+          </li>
+          <li><strong>Capote ao molho</strong> – Uma iguaria regional feita com galinha d'angola.</li>
+          <li><strong>Panelada e Sarapatel</strong> – Pratos tradicionais muito apreciados na culinária local.</li>
+        </ul>
+        <p>Explore Piripiri durante sua estadia e aproveite o melhor que a cidade tem a oferecer!</p>
+      </article>
+    </section>
+
+    <section id="programacao">
+      <h2 class="section-title"><span class="section-icon"><i
+            class="fas fa-calendar-alt icon-header icon-header-schedule"></i></span> Programação</h2>
+      <div class="container-programacao">
+        <div class="day-container">
+          <h3 class="day-title">Dia 1 - 10/09/2025</h3>
+          <div class="session-container">
+            <h4 class="session-title">Manhã (08h - 12h)</h4>
+            <ul class="session-list">
+              <li class="session-item">
+                <span class="event-time">08h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-abertura">🏁</span> Abertura Oficial
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">09h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-palestra">🎤</span> Palestra: Inovação e Cidadania Digital
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">10h30</span>
+                <span class="event-description">
+                  <span class="event-icon icon-networking">👥</span> Coffee Break e Networking
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">11h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-apresentacao">💬</span> Mesa redonda com egressos do IFPI
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="session-container">
+            <h4 class="session-title">Tarde (14h - 18h)</h4>
+            <ul class="session-list">
+              <li class="session-item">
+                <span class="event-time">14h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-oficina">🛠️</span> Oficinas simultâneas: IA, Web, Robótica
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">16h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-apresentacao">📊</span> Mostra de Projetos de Pesquisa
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">17h30</span>
+                <span class="event-description">
+                  <span class="event-icon icon-encerramento">🏳️</span> Encerramento das atividades da tarde
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="session-container">
+            <h4 class="session-title">Noite (19h - 21h)</h4>
+            <ul class="session-list">
+              <li class="session-item">
+                <span class="event-time">19h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-palestra">🌟</span> Palestra Magna: O futuro da tecnologia no Brasil
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">20h30</span>
+                <span class="event-description">
+                  <span class="event-icon icon-apresentacao">💬</span> Debate com convidados
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-container">
+          <h3 class="day-title">Dia 2 - 11/09/2025</h3>
+          <div class="session-container">
+            <h4 class="session-title">Manhã (08h - 12h)</h4>
+            <ul class="session-list">
+              <li class="session-item">
+                <span class="event-time">08h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-apresentacao">📋</span> Painéis Temáticos: Ensino, Pesquisa e Extensão
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">10h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-palestra">🎤</span> Palestra: Tecnologia e Sustentabilidade
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">11h30</span>
+                <span class="event-description">
+                  <span class="event-icon icon-encerramento">🏳️</span> Encerramento da manhã
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="session-container">
+            <h4 class="session-title">Tarde (14h - 18h)</h4>
+            <ul class="session-list">
+              <li class="session-item">
+                <span class="event-time">14h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-apresentacao">📝</span> Apresentações de Trabalhos Científicos
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">17h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-apresentacao">🏆</span> Premiação dos melhores artigos
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="session-container">
+            <h4 class="session-title">Noite (19h - 21h)</h4>
+            <ul class="session-list">
+              <li class="session-item">
+                <span class="event-time">19h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-encerramento">🎬</span> Encerramento Geral
+                </span>
+              </li>
+              <li class="session-item">
+                <span class="event-time">20h</span>
+                <span class="event-description">
+                  <span class="event-icon icon-networking">🎭</span> Apresentação cultural e coffee de despedida
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="submissao-inscricao">
+      <h2 class="section-title"><span class="section-icon"><i
+            class="fas fa-clipboard-list icon-header icon-header-subminsc"></i></span> Submissão e Inscrição</h2>
+      <article id="inscricao">
+        <h3 class="article-title"><span class="article-icon"><i
+              class="fas fa-user-plus icon-title icon-title-register"></i></span> Inscrição</h3>
+        <p>Participe do evento preenchendo o <a href="#"><i class="fas fa-external-link-alt"></i> formulário de
+            inscrição</a>. As vagas são limitadas.</p>
+      </article>
+      <article id="submissao">
+        <h3 class="article-title"><span class="article-icon"><i
+              class="fas fa-file-upload icon-title icon-title-upload"></i></span> Submissão de Trabalhos</h3>
+        <p>Autores podem submeter seus artigos até 20/08/2025. Acesse a <a href="#"><i
+              class="fas fa-external-link-alt"></i> plataforma de submissão</a> para enviar o seu trabalho.</p>
+      </article>
+      <article id="certificados">
+        <h3 class="article-title"><span class="article-icon"><i
+              class="fas fa-certificate icon-title icon-title-certs"></i></span> Certificados</h3>
+        <p>Os certificados estarão disponíveis após o encerramento do evento. Acesse a área de <a href="#"><i
+              class="fas fa-external-link-alt"></i> certificados</a> com seu CPF.</p>
+      </article>
+    </section>
+
+    <section id="organizacao-realizacao">
+      <h2 class="section-title"><span class="section-icon"><i
+            class="fas fa-handshake icon-header icon-header-org"></i></span> Organização e Realização</h2>
+      <div class="organizers-container">
+        <article class="organizer-column">
+          <h3><i class="fas fa-users icon-title icon-title-committee"></i> Comissão Organizadora</h3>
+          <ul class="organizer-list">
+            <li><i class="fas fa-user-tie list-icon"></i> Prof. Dr. João Silva - Coordenador Geral</li>
+            <li><i class="fas fa-user-tie list-icon"></i> Profa. Dra. Maria Oliveira - Vice-Coordenadora</li>
+            <li><i class="fas fa-user-tie list-icon"></i> Prof. Dr. Pedro Santos - Coordenador Científico</li>
+            <li><i class="fas fa-user-tie list-icon"></i> Profa. Dra. Ana Souza - Coordenadora de Comunicação</li>
+            <li><i class="fas fa-user-tie list-icon"></i> Prof. Dr. Lucas Martins - Coordenador de Logística</li>
+          </ul>
+        </article>
+        <article class="organizer-column">
+          <h3><i class="fas fa-building icon-title icon-title-realization"></i> Realização</h3>
+          <ul class="organizer-list">
+            <li><i class="fas fa-university list-icon"></i> Instituto Federal do Piauí - Campus Piripiri</li>
+            <li><i class="fas fa-flask list-icon"></i> Núcleo de Pesquisa e Inovação - NUPEI</li>
+            <li><i class="fas fa-laptop-code list-icon"></i> Curso de Análise e Desenvolvimento de Sistemas</li>
+          </ul>
+          <h3><i class="fas fa-handshake icon-title icon-title-support"></i> Apoio</h3>
+          <ul class="organizer-list">
+            <li><i class="fas fa-building list-icon"></i> Prefeitura Municipal de Piripiri</li>
+            <li><i class="fas fa-landmark list-icon"></i> Secretaria de Ciência e Tecnologia do Estado do Piauí</li>
+            <li><i class="fas fa-graduation-cap list-icon"></i> Conselho Nacional de Desenvolvimento Científico e
+              Tecnológico (CNPq)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2 class="section-title"><span class="section-icon"><i
+            class="fas fa-envelope icon-header icon-header-contact"></i></span> Contato</h2>
+      
+      <div id="flash-container"></div>
+          
+      <article>
+        <form id="contato-form" action="{{ url_for('enviar_mensagem') }}" method="POST">
+          <label for="nome"><i class="fas fa-user form-icon"></i> Nome*:</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email"><i class="fas fa-at form-icon"></i> E-mail*:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="telefone"><i class="fas fa-phone form-icon"></i>Telefone (opcional):</label>
+          <input type="tel" id="telefone" name="telefone" pattern="^\(\d{2}\)\s\d{5}-\d{4}$"
+            placeholder="(86) 91234-5678" maxlength="15">
+
+          <label for="mensagem"><i class="fas fa-comment form-icon"></i> Mensagem*:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <button type="submit"><i class="fas fa-paper-plane form-icon"></i> Enviar</button>
+        </form>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p><i class="fas fa-copyright"></i> 2025 Evento Científico. Todos os direitos reservados.</p>
+    <div class="social-media">
+      <a href="#" aria-label="Visite nossa página no Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Siga-nos no Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Veja nosso perfil no Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Conecte-se conosco no LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Se estiver usando Flask, reverta para: <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

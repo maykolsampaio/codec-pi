@@ -1,0 +1,1042 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #007bff;
+  /* Nova cor primária - ajuste conforme necessário */
+  --secondary: #26a69a;
+  --secondary-hover: #00897b;
+  --palestra: #e91e63;
+  --oficina: #ff9800;
+  --networking: #673ab7;
+  --apresentacao: #009688;
+  --abertura: #3f51b5;
+  --encerramento: #795548;
+
+  /* Cores para ícones (exemplo, pode criar mais ou usar variáveis de tema) */
+  --icon-nav-home-color: #3B82F6;
+  --icon-nav-event-color: yellow;
+  --icon-nav-about-color: #60A5FA;
+  --icon-nav-location-color: #10B981;
+  --icon-nav-speakers-color: #8B5CF6;
+  --icon-nav-schedule-color: #F97316;
+  --icon-nav-submission-color: #6B7280;
+  --icon-nav-register-color: #34D399;
+  --icon-nav-upload-color: #06B6D4;
+  --icon-nav-certs-color: #FBBF24;
+  --icon-nav-contact-color: #EF4444;
+
+  --icon-title-dates-color: #ff0;
+  --icon-card-eventdate-color: #F97316;
+  --icon-card-submissiondate-color: #06B6D4;
+  --icon-card-regdate-color: #34D399;
+
+  --icon-header-event-color: yellow;
+  --icon-title-about-color: #60A5FA;
+  --icon-title-location-color: #10B981;
+  --icon-title-speakers-color: #8B5CF6;
+  --icon-header-schedule-color: #F97316;
+  --icon-header-subminsc-color: #6B7280;
+  --icon-title-register-color: #34D399;
+  --icon-title-upload-color: #06B6D4;
+  --icon-title-certs-color: #FBBF24;
+  --icon-header-org-color: #1E3A8A;
+  --icon-title-committee-color: #1E3A8A;
+  --icon-title-realization-color: #6D28D9;
+  --icon-title-support-color: #1E3A8A;
+  --list-icon-color: #6D28D9;
+  /* Cor padrão para ícones de lista em organização */
+  --icon-header-contact-color: #EF4444;
+  --form-icon-color: #EF4444;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f8f8ff;
+  --bg-color-hover: #1f6389;
+  --text-color-hover: #f8f8ff;
+  --hd-color: #1f6389;
+  --day-bg: #333;
+  --section-bg: #222;
+  /* Fundo de sessão um pouco mais claro que day-bg */
+  --theme-color: yellow;
+  --icon-title-committee-color: #A5B4FC;
+  /* Ajuste para tema escuro */
+  --icon-title-realization-color: #C4B5FD;
+  /* Ajuste para tema escuro */
+  --icon-title-support-color: #A5B4FC;
+  /* Ajuste para tema escuro */
+  --list-icon-color: #C4B5FD;
+  /* Ajuste para tema escuro */
+}
+
+:root[data-theme="light"] {
+  --bg-color: #f8f8ff;
+  --text-color: #121212;
+  --bg-color-hover: #1f6389;
+  --text-color-hover: #f8f8ff;
+  --hd-color: #1f6389;
+  --day-bg: #e0e0e0;
+  /* Um cinza claro para day-bg */
+  --section-bg: #ffffff;
+  --theme-color: #f8f8ff;
+  /* Cor do ícone do tema no modo claro */
+}
+
+/* Estilos para ícones movidos do inline */
+.icon-nav {
+  margin-right: 0.3em;
+}
+
+.icon-nav-home {
+  color: var(--icon-nav-home-color);
+}
+
+.icon-nav-event {
+  color: var(--icon-nav-event-color);
+}
+
+.icon-nav-about {
+  color: var(--icon-nav-about-color);
+}
+
+.icon-nav-location {
+  color: var(--icon-nav-location-color);
+}
+
+.icon-nav-speakers {
+  color: var(--icon-nav-speakers-color);
+}
+
+.icon-nav-schedule {
+  color: var(--icon-nav-schedule-color);
+}
+
+.icon-nav-submission {
+  color: var(--icon-nav-submission-color);
+}
+
+.icon-nav-register {
+  color: var(--icon-nav-register-color);
+}
+
+.icon-nav-upload {
+  color: var(--icon-nav-upload-color);
+}
+
+.icon-nav-certs {
+  color: var(--icon-nav-certs-color);
+}
+
+.icon-nav-contact {
+  color: var(--icon-nav-contact-color);
+}
+
+.icon-title {
+  margin-right: 0.3em;
+}
+
+.icon-title-dates {
+  color: var(--icon-title-dates-color);
+}
+
+.icon-card {
+  margin-right: 0.3em;
+}
+
+.icon-card-eventdate {
+  color: var(--icon-card-eventdate-color);
+}
+
+.icon-card-submissiondate {
+  color: var(--icon-card-submissiondate-color);
+}
+
+.icon-card-regdate {
+  color: var(--icon-card-regdate-color);
+}
+
+.icon-header {
+  margin-right: 0.3em;
+}
+
+.icon-header-event {
+  color: var(--icon-header-event-color);
+}
+
+.icon-title-about {
+  color: var(--icon-title-about-color);
+}
+
+.icon-title-location {
+  color: var(--icon-title-location-color);
+}
+
+.icon-title-speakers {
+  color: var(--icon-title-speakers-color);
+}
+
+.icon-header-schedule {
+  color: var(--icon-header-schedule-color);
+}
+
+.icon-header-subminsc {
+  color: var(--icon-header-subminsc-color);
+}
+
+.icon-title-register {
+  color: var(--icon-title-register-color);
+}
+
+.icon-title-upload {
+  color: var(--icon-title-upload-color);
+}
+
+.icon-title-certs {
+  color: var(--icon-title-certs-color);
+}
+
+.icon-header-org {
+  color: var(--icon-header-org-color);
+}
+
+.icon-title-committee {
+  color: var(--icon-title-committee-color);
+}
+
+.icon-title-realization {
+  color: var(--icon-title-realization-color);
+}
+
+.icon-title-support {
+  color: var(--icon-title-support-color);
+}
+
+.list-icon {
+  color: var(--list-icon-color);
+  margin-right: 0.5em;
+}
+
+.icon-header-contact {
+  color: var(--icon-header-contact-color);
+}
+
+.form-icon {
+  color: var(--form-icon-color);
+  margin-right: 0.3em;
+}
+
+
+.menu-desktop details summary {
+  border: none;
+  padding: 0.5rem 1rem;
+  color: var(--text-color-hover);
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.menu-desktop details summary:hover {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.menu-desktop details ul li {
+  color: var(--text-color-hover);
+  /* Herdado por 'a' a menos que sobrescrito */
+}
+
+.section-title,
+.article-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  /* Cor do título da seção/artigo */
+}
+
+.section-icon,
+.article-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  /* background-color: var(--secondary); Cor de fundo do ícone */
+  /* color: white; Cor do ícone em si */
+}
+
+.article-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0rem !important;
+  background-color: var(--hd-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  text-align: center;
+  color: #f8f8ff;
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text-color-hover);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header ul {
+  justify-content: space-around;
+  margin: 0;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: none;
+  border-radius: 10px;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(75, 75, 75, 0.6); /* cinza translúcido */
+  padding: 20px 30px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2em;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.menu-desktop {
+  display: flex;
+  gap: 1rem;
+  /* Reduzido para melhor encaixe */
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-desktop details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin: 0;
+  list-style: none;
+  background-color: var(--bg-color);
+  /* Cor de fundo do submenu */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-desktop details ul a {
+  color: var(--text-color);
+  /* Cor do texto no submenu */
+  text-decoration: none;
+  display: block;
+  /* Para que o padding funcione bem */
+  padding: 0.5rem;
+}
+
+.menu-desktop details ul a:hover {
+  background-color: var(--secondary-hover);
+  color: var(--text-color-hover);
+  /* Cor do texto no hover do submenu */
+}
+
+.menu-mobile {
+  display: none;
+}
+
+main {
+  padding-top: 10rem;
+  /* Ajuste conforme necessidade, header já não tem padding tão grande */
+}
+
+section,
+article {
+  scroll-margin-top: 150px;
+  /* Ajuste conforme altura do header fixo */
+}
+
+article:first-child{
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+article:nth-child(n+2) {
+  background-color: var(--day-bg);
+  /* Fundo para articles genéricos */
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Remover fundo de article dentro de day-container, pois day-container já tem */
+.day-container article {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+/* Remover fundo de article dentro da seção de organização, se necessário */
+#organizacao-realizacao article.organizer-column {
+  background-color: var(--section-bg);
+  /* Ou var(--day-bg) se preferir */
+}
+
+/* Remover fundo do article de formulário se já estiver dentro de section com padding */
+#contato article {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+.flash-message {
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+
+.flash-success {
+  background-color: #28a745;
+}
+
+.flash-error {
+  background-color: #dc3545;
+}
+
+.flash-warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+.flash-info {
+  background-color: #17a2b8;
+}
+
+.flash-hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+main section {
+  padding: 2rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+main section:last-child {
+  border-bottom: none;
+}
+
+.container-programacao {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+footer {
+  background-color: var(--hd-color);
+  color: var(--text-color-hover);
+  padding: 1rem;
+  text-align: center;
+}
+
+.social-media a {
+  color: var(--text-color-hover);
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: var(--theme-color);
+}
+
+
+/* Botão de tema */
+#theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color-hover);
+  /* Cor do ícone do tema no header */
+  font-size: 1.5rem;
+  cursor: pointer;
+  /* Acima do header */
+  transition: color 0.3s;
+}
+
+#theme-toggle:hover {
+  color: var(--theme-color);
+}
+
+/* Banner Section */
+.banner-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  /* Cor padrão do texto sobre o banner */
+  padding: 0 !important;
+  /* Remover padding da section */
+  border-bottom: none !important;
+  /* Remover borda da section */
+}
+
+.banner-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  display: block;
+  /* Evitar espaço extra abaixo da imagem */
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 40%;
+  /* Ajuste para centralizar melhor */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Fundo semi-transparente para legibilidade */
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.banner-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #f0f0f0;
+}
+
+.banner-location {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+.datas-importantes-article {
+  margin-top: 2rem;
+  /* Espaçamento após o banner visual */
+  text-align: left;
+  background-color: var(--bg-color);
+  /* Fundo para destacar do banner */
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+  /* Para que não fique "atrás" do banner se o overlay for grande */
+  z-index: 1;
+}
+
+.datas-importantes-article h3 {
+  color: var(--text-color);
+}
+
+
+.important-dates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Responsivo */
+  padding: 20px;;
+  gap: 1rem;
+}
+
+.date-card {
+  background-color: var(--section-bg);
+  /* Usar section-bg para consistência */
+  color: var(--text-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+  /* Removido, gap do grid cuida */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.date-card h4 {
+  color: var(--secondary);
+  /* Destaque para o título do card */
+}
+
+.date-card:hover {
+  transform: translateY(-3px);
+}
+
+.speakers-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Media queries para speakers e programação */
+@media (min-width: 768px) {
+  .speakers-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container-programacao {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .speakers-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  /* .container-programacao já está 1fr 1fr de 768px, pode manter ou ajustar */
+}
+
+.speaker-card {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--section-bg);
+  /* Usar section-bg */
+  transition: transform 0.3s ease;
+  color: var(--text-color);
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+}
+
+.speaker-image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 100%;
+  max-width: 150px;
+  /* Limitar tamanho da imagem */
+  display: block;
+  margin: 0 auto 1rem auto;
+  /* Centralizar imagem */
+  border-radius: 50%;
+}
+
+.speaker-name {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  /* Usar cor primária */
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.speaker-bio {
+  /* color: var(--text-color); */
+  /* Já herdado */
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.speakers-heading {
+  /* Não usado no HTML fornecido, mas é uma boa classe */
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--text-color);
+}
+
+.day-container {
+  background-color: var(--day-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.day-container h3.day-title {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.session-container {
+  background-color: var(--section-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.session-container:hover {
+  transform: translateY(-3px);
+}
+
+.session-container h4.session-title {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.session-title::before {
+  content: "🕒";
+  margin-right: 0.5rem;
+}
+
+.session-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.session-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eaeaea;
+  /* Considerar var(--border-color) se tiver */
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+:root[data-theme="dark"] .session-item {
+  border-bottom: 1px solid #444;
+}
+
+
+.session-item:last-child {
+  border-bottom: none;
+}
+
+.event-time {
+  font-weight: bold;
+  color: var(--primary);
+  min-width: 60px;
+  /* Aumentado um pouco */
+  margin-right: 1rem;
+}
+
+.event-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.event-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+  color: white;
+  /* Cor do emoji/texto dentro do ícone */
+  font-size: 18px;
+  line-height: 32px;
+  /* Para centralizar emojis melhor */
+  text-align: center;
+}
+
+.icon-palestra {
+  background-color: var(--palestra);
+}
+
+.icon-oficina {
+  background-color: var(--oficina);
+}
+
+.icon-networking {
+  background-color: var(--networking);
+}
+
+.icon-apresentacao {
+  background-color: var(--apresentacao);
+}
+
+.icon-abertura {
+  background-color: var(--abertura);
+}
+
+.icon-encerramento {
+  background-color: var(--encerramento);
+}
+
+.session-item:hover {
+  background-color: rgba(38, 166, 154, 0.1);
+  /* Usar var(--secondary) com alpha */
+  border-left: 3px solid var(--secondary);
+  padding-left: calc(0.75rem - 3px);
+  /* Ajustar padding para compensar a borda */
+}
+
+/* Organização e Realização */
+.organizers-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .organizers-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .organizer-column h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .organizer-column h3 i {
+    margin-right: 0.5em;
+  }
+
+  .organizer-list {
+    list-style: none;
+    padding-left: 0;
+    color: var(--text-color);
+  }
+
+  .organizer-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Contato Form */
+  #contato form label {
+    display: flex;
+    /* Para alinhar ícone com texto */
+    align-items: center;
+    margin-bottom: 0.25rem;
+    /* Espaçamento padrão do Pico é grande */
+  }
+
+  #contato form button[type="submit"] {
+    display: inline-flex;
+    /* Para alinhar ícone com texto do botão */
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* Highlight para scroll suave */
+  .highlight {
+    animation: highlight-animation 1s ease-out;
+  }
+
+  @keyframes highlight-animation {
+    0% {
+      background-color: rgba(255, 255, 0, 0.3);
+    }
+
+    /* Amarelo suave */
+    100% {
+      background-color: transparent;
+    }
+  }
+}
+
+
+/* Responsividade adicional */
+@media (max-width: 768px) {
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0rem;
+    font-size: 20px;
+  }
+
+  .menu-mobile summary {
+    font-size: 20px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: white;
+  }
+
+  .menu-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-mobile li {
+    width: 100%;
+  }
+
+  .menu-mobile li a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .menu-mobile li a:hover {
+    background-color: transparent;
+  }
+
+  .menu-mobile details {
+    width: 100%;
+  }
+
+  .menu-mobile details ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .menu-mobile details ul li a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    /* mantém centralizado mesmo com padding lateral */
+  }
+
+  .session-container {
+    padding: 1rem;
+  }
+
+  .event-time {
+    min-width: 50px;
+  }
+
+  .banner-title {
+    font-size: 2rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .banner-location {
+    font-size: 1rem;
+  }
+
+  .banner-overlay {
+    padding: 0.5rem 1rem;
+    top: 50%;
+    /* Pode precisar de ajuste fino */
+  }
+
+  .datas-importantes-article {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .menu-desktop details summary,
+  .menu-desktop li a {
+    padding: 0.5rem;
+    /* Menor padding em telas pequenas */
+  }
+
+  .menu-desktop {
+    gap: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+    /* Título menor no mobile */
+  }
+
+  .important-dates {
+    grid-template-columns: 1fr;
+    /* Uma coluna em telas muito pequenas */
+  }
+}

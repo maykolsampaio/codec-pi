@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evento Científico 2025</title>
+  <script>
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+  <!-- Pico.css com tema escuro -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+<style>
+  html {
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --secondary: #26a69a;
+  --secondary-hover: #00897b;
+  --palestra: #e91e63;
+  --oficina: #ff9800;
+  --networking: #673ab7;
+  --apresentacao: #009688;
+  --abertura: #3f51b5;
+  --encerramento: #795548;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f8f8ff;
+  --bg-color-hover: #1f6389;
+  --text-color-hover: #f8f8ff;
+  --hd-color: #1f6389;
+  --day-bg: #333;
+  --theme-color: yellow;
+}
+
+:root[data-theme="light"] {
+  --bg-color: #f8f8ff;
+  --text-color: #121212;
+  --bg-color-hover: #1f6389;
+  --text-color-hover: #f8f8ff;
+  --hd-color: #1f6389;
+  --day-bg: #add8e6;
+  --section-bg: #ffffff;
+  --theme-color: #f8f8ff;
+}
+
+.menu-desktop details summary {
+  border: none;              /* Remove a borda */
+  padding: 0.5rem 1rem;
+  color: var(--text-color-hover);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.menu-desktop details summary:hover {
+  background-color: var(--bg-color); /* Cor de fundo ao passar o mouse */
+  color: var(--text-color)
+}
+
+/* Remove o padding e margem dos itens do submenu */
+.menu-desktop details ul li {
+  color: var(--text-color-hover);
+}
+
+.section-title, .article-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-icon, .article-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.article-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--hd-color); /* Cor sólida, sem transparência */
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  text-align: center;
+  color: #f8f8ff;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text-color-hover);
+}
+
+nav a:hover {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header ul {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menu-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-desktop details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin: 0;
+  list-style: none;
+  background-color: var(--bg-color);
+}
+
+.menu-desktop details ul a {
+  color: var(--text-color-hover);
+  text-decoration: none;
+}
+
+.menu-desktop details ul a:hover {
+  color: var(--text-color);
+}
+
+.menu-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    color: var(--text-color);
+  }
+
+  .menu-mobile summary {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+
+  .menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-mobile li {
+    margin: 0.5rem 0;
+  }
+
+  .menu-mobile details ul {
+    background-color: var(--bg-color);
+  }
+
+  .menu-mobile details ul a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .menu-mobile details ul a:hover {
+    color: var(--text-color-hover);
+  }
+}
+
+main {
+  padding-top: 10rem; /* ajuste conforme altura do header */
+  scroll-margin-top: 250px; /* garante que o conteúdo não fique atrás do header ao clicar nos links */
+}
+
+section, article{
+
+  scroll-margin-top: 250px; /* garante que o conteúdo não fique atrás do header ao clicar nos links */
+
+} 
+
+article{
+  background-color: var(--day-bg);
+}
+
+main section {
+  padding: 2rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.container-programacao {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+footer {
+  background-color: var(--hd-color);
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Botão de tema */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: color 0.3s;
+}
+
+#theme-toggle:hover {
+  color: var(--theme-color);
+}
+
+.important-dates{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
+.date-card {
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.date-card:hover {
+  transform: translateY(-3px);
+}
+
+
+.speakers-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Telas pequenas: 1 palestrante por linha */
+@media (min-width: 576px) {
+  .speakers-container {
+    grid-template-columns: 1fr;
+  }
+
+  .container-programacao {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Telas médias: 2 palestrantes por linha */
+@media (min-width: 768px) {
+  .speakers-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container-programacao {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Telas grandes: 4 palestrantes por linha */
+@media (min-width: 992px) {
+  .speakers-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .container-programacao {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.speaker-card {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--day-bg);
+  transition: transform 0.3s ease;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+}
+
+.speaker-image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.speaker-name {
+  margin-bottom: 0.5rem;
+  color: #1095c1;
+  text-align: center;
+}
+
+.speaker-bio {
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.speakers-heading {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+
+.day-container {
+  background-color: var(--day-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.day-title {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.session-container {
+  background-color: var(--section-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.session-container:hover {
+  transform: translateY(-3px);
+}
+
+.session-title {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.session-title::before {
+  content: "🕒";
+  margin-right: 0.5rem;
+}
+
+.session-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.session-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+}
+
+.session-item:last-child {
+  border-bottom: none;
+}
+
+.event-time {
+  font-weight: bold;
+  color: var(--primary);
+  min-width: 50px;
+  margin-right: 1rem;
+}
+
+.event-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.event-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+  color: white;
+  font-size: 18px;
+}
+
+.icon-palestra {
+  background-color: var(--palestra);
+}
+
+.icon-oficina {
+  background-color: var(--oficina);
+}
+
+.icon-networking {
+  background-color: var(--networking);
+}
+
+.icon-apresentacao {
+  background-color: var(--apresentacao);
+}
+
+.icon-abertura {
+  background-color: var(--abertura);
+}
+
+.icon-encerramento {
+  background-color: var(--encerramento);
+}
+
+.session-item:hover {
+  background-color: rgba(38, 166, 154, 0.1);
+  border-left: 3px solid var(--secondary);
+  padding-left: 0.75rem;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .session-container {
+    padding: 1rem;
+  }
+  
+  .event-time {
+    min-width: 40px;
+  }
+  
+}
+</style>
+</head>
+
+<body>
+
+
+  <header>
+    <!-- Botão de alternância de tema -->
+    <button id="theme-toggle" aria-label="Alternar tema">
+      <i id="theme-icon" class="fa-solid fa-moon"></i>
+    </button>
+    <h1>CODEC-PI 2025</h1>
+    <nav>
+      <ul class="menu-desktop">
+        <li><a href="#inicio" class="nav-link"><i class="fa-solid fa-home" style="color:#3B82F6"></i> Início</a></li>
+        <li>
+          <details class="dropdown">
+            <summary role="button" class="outline"><i class="fa-solid fa-lightbulb" style="color: yellow;"></i> O Evento</summary>
+            <ul>
+              <li><a href="#sobre" class="nav-link"><i class="fa-solid fa-circle-info" style="color:#60A5FA"></i> Sobre</a></li>
+              <li><a href="#local" class="nav-link"><i class="fa-solid fa-location-dot" style="color:#10B981"></i> Local</a></li>
+              <li><a href="#palestrantes" class="nav-link"><i class="fa-solid fa-user-tie" style="color:#8B5CF6"></i> Palestrantes</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#programacao" class="nav-link"><i class="fa-solid fa-calendar-days" style="color:#F97316"></i> Programação</a></li>
+        <li>
+          <details class="dropdown">
+            <summary role="button" class="outline"><i class="fa-solid fa-file-signature" style="color:#6B7280"></i> Inscrição e Submissão</summary>
+            <ul>
+              <li><a href="#inscricao" class="nav-link"><i class="fa-solid fa-user-plus" style="color:#34D399"></i> Inscrição</a></li>
+              <li><a href="#submissao" class="nav-link"><i class="fa-solid fa-file-upload" style="color:#06B6D4"></i> Submissão</a></li>
+              <li><a href="#certificados" class="nav-link"><i class="fa-solid fa-certificate" style="color:#FBBF24"></i> Certificados</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#contato" class="nav-link"><i class="fa-solid fa-envelope" style="color:#EF4444"></i> Contato</a></li>
+      </ul>
+
+      <details class="menu-mobile">
+        <summary><i class="fa-solid fa-bars"></i> Menu</summary>
+        <ul>
+          <li><a href="#inicio"><i class="fa-solid fa-home"></i> Início</a></li>
+          <li>
+            <details class="dropdown">
+              <summary><i class="fa-solid fa-info-circle"></i> O Evento</summary>
+              <ul>
+                <li><a href="#sobre"><i class="fa-solid fa-circle-info"></i> Sobre</a></li>
+                <li><a href="#local"><i class="fa-solid fa-location-dot"></i> Local</a></li>
+                <li><a href="#palestrantes"><i class="fa-solid fa-user-tie"></i> Palestrantes</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#programacao"><i class="fa-solid fa-calendar-days"></i> Programação</a></li>
+          <li>
+            <details class="dropdown">
+              <summary><i class="fa-solid fa-file-signature"></i> Inscrição e Submissão</summary>
+              <ul>
+                <li><a href="#inscricao"><i class="fa-solid fa-user-plus"></i> Inscrição</a></li>
+                <li><a href="#submissao"><i class="fa-solid fa-file-upload"></i> Submissão</a></li>
+                <li><a href="#certificados"><i class="fa-solid fa-certificate"></i> Certificados</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#contato"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Banner principal -->
+    <section id="inicio" style="position: relative; text-align: center; color: white;">
+      <img src="https://d1h79zlghft2zs.cloudfront.net/uploads/2019/07/8044-1200x630.png" alt="Banner CODEC-PI"
+        style="width: 100%; max-height: 450px; object-fit: cover;">
+      <div style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -30%);">
+        <h1 style="font-size: 3rem;">CODEC-PI 2025</h1>
+        <p style="font-size: 1.5rem;">Congresso de Desenvolvimento Científico e Tecnológico do IFPI</p>
+        <p>Piripiri - IFPI Campus Piripiri</p>
+      </div>
+      <!-- Novo artigo de Datas Importantes -->
+      <article id="datas-importantes" style="margin-top: 50px; text-align: left;">
+        <h3><i class="fa-solid fa-calendar-check" style="color:#ff0"></i> Datas Importantes</h3>
+        <div class="important-dates">
+          <div class="date-card">
+            <h4><i class="fa-solid fa-calendar-day" style="color:#F97316"></i> Realização do Evento</h4>
+            <p>10 a 11 de Setembro de 2025</p>
+          </div>
+          
+          <div class="date-card">
+            <h4><i class="fa-solid fa-file-upload" style="color:#06B6D4"></i> Período de Submissão</h4>
+            <p>01 de Junho a 20 de Agosto de 2025</p>
+          </div>
+          
+          <div class="date-card">
+            <h4><i class="fa-solid fa-user-plus" style="color:#34D399"></i> Período de Inscrição</h4>
+            <p>01 de Julho a 05 de Setembro de 2025</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="evento">
+      <h2><span class="section-icon"><i class="fa-solid fa-lightbulb" style="color: yellow;"></i></span> O Evento</h2>
+      <article id="sobre">
+        <h3 id="sobre"><i class="fa-solid fa-info-circle" style="color: #60A5FA;"></i> Sobre</h3>
+        <p>O Evento Científico 2025 é um encontro acadêmico voltado para a divulgação de pesquisas, integração entre
+          estudantes e profissionais da área e promoção da ciência em diversas áreas do conhecimento.</p>
+      </article>
+
+      <!-- Local -->
+      <article id="local">
+        <h3><span class="article-icon"><i class="fas fa-map-marker-alt" style="color: #10B981;"></i></span> Local</h3>
+        <p>O evento será realizado no IFPI Campus Piripiri:</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.6411158782807!2d-41.79635442502331!3d-4.289721595684236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x793a8252d47392f%3A0x139cb92f5ae08555!2sIFPI%20Campus%20Piripiri!5e0!3m2!1spt-BR!2sbr!4v1747076415835!5m2!1spt-BR!2sbr"
+          width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+
+        </iframe>
+      </article>
+
+      <article id="palestrantes">
+        <h3><span class="article-icon"><i class="fas fa-microphone" style="color: #8B5CF6;"></i></span> Palestrantes</h3>
+        <div class="speakers-container">
+          <!-- Palestrante 1 -->
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Ana Silva" class="speaker-image">
+            <h3 class="speaker-name">Ana Silva</h3>
+            <p class="speaker-bio">Especialista em Inteligência Artificial com mais de 10 anos de experiência em
+              desenvolvimento de soluções para empresas de tecnologia. Fundadora da Tech AI Solutions.</p>
+          </div>
+
+          <!-- Palestrante 2 -->
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Ricardo Pereira" class="speaker-image">
+            <h3 class="speaker-name">Ricardo Pereira</h3>
+            <p class="speaker-bio">Professor de Ciência de Dados na Universidade Federal de Tecnologia. Autor de
+              diversos artigos científicos sobre Machine Learning e Big Data.</p>
+          </div>
+
+          <!-- Palestrante 3 -->
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Juliana Costa" class="speaker-image">
+            <h3 class="speaker-name">Juliana Costa</h3>
+            <p class="speaker-bio">CEO da Inova Solutions, premiada por suas contribuições em transformação digital.
+              Palestrante internacional com foco em liderança e inovação tecnológica.</p>
+          </div>
+
+          <!-- Palestrante 4 -->
+          <div class="speaker-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg"
+              alt="Foto de Carlos Mendes" class="speaker-image">
+            <h3 class="speaker-name">Carlos Mendes</h3>
+            <p class="speaker-bio">Especialista em Cibersegurança com certificações internacionais. Consultor de grandes
+              empresas e palestrante reconhecido na área de segurança da informação.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Programação -->
+    <section id="programacao">
+      <h2><span class="section-icon"><i class="fas fa-calendar-alt" style="color: #F97316;"></i></span> Programação</h2>
+
+      <!-- Dia 1 -->
+      <div class="container-programacao">
+      <div class="day-container">
+        <h3 class="day-title">Dia 1 - 10/09/2025</h3>
+
+        <!-- Manhã -->
+        <div class="session-container">
+          <h4 class="session-title">Manhã (08h - 12h)</h4>
+          <ul class="session-list">
+            <li class="session-item">
+              <span class="event-time">08h</span>
+              <span class="event-description">
+                <span class="event-icon icon-abertura">🏁</span>
+                Abertura Oficial
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">09h</span>
+              <span class="event-description">
+                <span class="event-icon icon-palestra">🎤</span>
+                Palestra: Inovação e Cidadania Digital
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">10h30</span>
+              <span class="event-description">
+                <span class="event-icon icon-networking">👥</span>
+                Coffee Break e Networking
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">11h</span>
+              <span class="event-description">
+                <span class="event-icon icon-apresentacao">💬</span>
+                Mesa redonda com egressos do IFPI
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tarde -->
+        <div class="session-container">
+          <h4 class="session-title">Tarde (14h - 18h)</h4>
+          <ul class="session-list">
+            <li class="session-item highlight">
+              <span class="event-time">14h</span>
+              <span class="event-description">
+                <span class="event-icon icon-oficina">🛠️</span>
+                Oficinas simultâneas: IA, Web, Robótica
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">16h</span>
+              <span class="event-description">
+                <span class="event-icon icon-apresentacao">📊</span>
+                Mostra de Projetos de Pesquisa
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">17h30</span>
+              <span class="event-description">
+                <span class="event-icon icon-encerramento">🏳️</span>
+                Encerramento das atividades da tarde
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Noite -->
+        <div class="session-container">
+          <h4 class="session-title">Noite (19h - 21h)</h4>
+          <ul class="session-list">
+            <li class="session-item highlight">
+              <span class="event-time">19h</span>
+              <span class="event-description">
+                <span class="event-icon icon-palestra">🌟</span>
+                Palestra Magna: O futuro da tecnologia no Brasil
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">20h30</span>
+              <span class="event-description">
+                <span class="event-icon icon-apresentacao">💬</span>
+                Debate com convidados
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dia 2 -->
+      <div class="day-container">
+        <h3 class="day-title">Dia 2 - 11/09/2025</h3>
+
+        <!-- Manhã -->
+        <div class="session-container">
+          <h4 class="session-title">Manhã (08h - 12h)</h4>
+          <ul class="session-list">
+            <li class="session-item">
+              <span class="event-time">08h</span>
+              <span class="event-description">
+                <span class="event-icon icon-apresentacao">📋</span>
+                Painéis Temáticos: Ensino, Pesquisa e Extensão
+              </span>
+            </li>
+            <li class="session-item highlight">
+              <span class="event-time">10h</span>
+              <span class="event-description">
+                <span class="event-icon icon-palestra">🎤</span>
+                Palestra: Tecnologia e Sustentabilidade
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">11h30</span>
+              <span class="event-description">
+                <span class="event-icon icon-encerramento">🏳️</span>
+                Encerramento da manhã
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tarde -->
+        <div class="session-container">
+          <h4 class="session-title">Tarde (14h - 18h)</h4>
+          <ul class="session-list">
+            <li class="session-item highlight">
+              <span class="event-time">14h</span>
+              <span class="event-description">
+                <span class="event-icon icon-apresentacao">📝</span>
+                Apresentações de Trabalhos Científicos
+              </span>
+            </li>
+            <li class="session-item">
+              <span class="event-time">17h</span>
+              <span class="event-description">
+                <span class="event-icon icon-apresentacao">🏆</span>
+                Premiação dos melhores artigos
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Noite -->
+        <div class="session-container">
+          <h4 class="session-title">Noite (19h - 21h)</h4>
+          <ul class="session-list">
+            <li class="session-item">
+              <span class="event-time">19h</span>
+              <span class="event-description">
+                <span class="event-icon icon-encerramento">🎬</span>
+                Encerramento Geral
+              </span>
+            </li>
+            <li class="session-item highlight">
+              <span class="event-time">20h</span>
+              <span class="event-description">
+                <span class="event-icon icon-networking">🎭</span>
+                Apresentação cultural e coffee de despedida
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    </section>
+
+    <section id="submissao-inscricao">
+      <h2 class="section-title"><span class="section-icon"><i class="fas fa-clipboard-list" style="color: #6B7280;"></i></span> Submissão e
+        Inscrição</h2>
+
+      <article id="inscricao">
+        <h3 class="article-title"><span class="article-icon"><i class="fas fa-user-plus" style="color: #34D399;"></i></span> Inscrição</h3>
+        <p>Participe do evento preenchendo o <a href="#"><i class="fas fa-external-link-alt"></i> formulário de
+            inscrição</a>. As vagas são limitadas.</p>
+      </article>
+
+      <article id="submissao">
+        <h3 class="article-title"><span class="article-icon"><i class="fas fa-file-upload" style="color: #06B6D4;"></i></span> Submissão de
+          Trabalhos</h3>
+        <p>Autores podem submeter seus artigos até 20/08/2025. Acesse a <a href="#"><i
+              class="fas fa-external-link-alt"></i> plataforma de submissão</a> para
+          enviar o seu trabalho.</p>
+      </article>
+
+      <article id="certificados">
+        <h3 class="article-title"><span class="article-icon"><i class="fas fa-certificate" style="color:#FBBF24"></i></span> Certificados</h3>
+        <p>Os certificados estarão disponíveis após o encerramento do evento. Acesse a área de <a href="#"><i
+              class="fas fa-external-link-alt"></i> certificados</a> com seu CPF.</p>
+      </article>
+    </section>
+
+
+     <!-- Nova seção de Organização e Realização -->
+     <section id="organizacao-realizacao">
+      <h2 class="section-title"><span class="section-icon"><i class="fas fa-handshake" style="color: #1E3A8A;"></i></span> Organização e Realização</h2>
+      
+      <div class="organizers-container">
+        <article class="organizer-column">
+          <h3><i class="fas fa-users" style="color:#1E3A8A"></i> Comissão Organizadora</h3>
+          <ul class="organizer-list">
+            <li><i class="fas fa-user-tie" style="color:#1E3A8A"></i> Prof. Dr. João Silva - Coordenador Geral</li>
+            <li><i class="fas fa-user-tie" style="color:#1E3A8A"></i> Profa. Dra. Maria Oliveira - Vice-Coordenadora</li>
+            <li><i class="fas fa-user-tie" style="color:#1E3A8A"></i> Prof. Dr. Pedro Santos - Coordenador Científico</li>
+            <li><i class="fas fa-user-tie" style="color:#1E3A8A"></i> Profa. Dra. Ana Souza - Coordenadora de Comunicação</li>
+            <li><i class="fas fa-user-tie" style="color:#1E3A8A"></i> Prof. Dr. Lucas Martins - Coordenador de Logística</li>
+          </ul>
+        </article>
+        
+        <article class="organizer-column">
+          <h3><i class="fas fa-building" style="color:#6D28D9"></i> Realização</h3>
+          <ul class="organizer-list">
+            <li><i class="fas fa-university" style="color:#6D28D9"></i> Instituto Federal do Piauí - Campus Piripiri</li>
+            <li><i class="fas fa-flask" style="color:#6D28D9"></i> Núcleo de Pesquisa e Inovação - NUPEI</li>
+            <li><i class="fas fa-laptop-code" style="color:#6D28D9"></i> Curso de Análise e Desenvolvimento de Sistemas</li>
+          </ul>
+          
+          <h3><i class="fas fa-handshake" style="color:#1E3A8A"></i> Apoio</h3>
+          <ul class="organizer-list">
+            <li><i class="fas fa-building" style="color:#6D28D9"></i> Prefeitura Municipal de Piripiri</li>
+            <li><i class="fas fa-landmark" style="color:#6D28D9"></i> Secretaria de Ciência e Tecnologia do Estado do Piauí</li>
+            <li><i class="fas fa-graduation-cap" style="color:#6D28D9"></i> Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+      <!-- Contato -->
+      <section id="contato">
+        <h2 class="section-title"><span class="section-icon"><i class="fas fa-envelope" style="color:#EF4444"></i></span> Contato</h2>
+        <article>
+          <form action="mailto:contato.codecpi@ifpi.edu.br" method="POST" enctype="text/plain">
+            <label for="nome"><i class="fas fa-user" style="color:#EF4444"></i> Nome</label>
+            <input type="text" id="nome" name="nome" required>
+  
+            <label for="email"><i class="fas fa-at" style="color:#EF4444"></i> E-mail</label>
+            <input type="email" id="email" name="email" required>
+  
+            <label for="mensagem"><i class="fas fa-comment" style="color:#EF4444"></i> Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+  
+            <button type="submit"><i class="fas fa-paper-plane" style="color:#EF4444"></i> Enviar</button>
+          </form>
+        </article>
+      </section>
+  
+
+  </main>
+
+  <footer>
+    <p><i class="fas fa-copyright"></i> 2025 Evento Científico. Todos os direitos reservados.</p>
+    <div class="social-media">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}">
+  </script>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- JavaScript para animação suave -->
+  <script>
+    // Scroll com destaque
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        target.classList.add('highlight');
+        setTimeout(() => target.classList.remove('highlight'), 1000);
+      });
+    });
+
+    // Animações com GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray("section").forEach(section => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
