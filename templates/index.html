@@ -17,13 +17,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Se estiver usando Flask, reverta para: <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" /> -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 </head>
 
 <body>
 
   <header>
-     <img src="static/images/codec.png" alt="Logo do Evento" style="margin: auto;margin-left: 10px; height:50px">
-     <nav>
+    <img src="static/images/codec.png" alt="Logo do Evento" style="margin: auto;margin-left: 10px; height:50px">
+    <nav>
       <ul class="menu-desktop">
         <li><a href="#inicio" class="nav-link"><i class="fa-solid fa-home icon-nav icon-nav-home"></i> Início</a></li>
         <li>
@@ -148,16 +149,18 @@
   </header>
 
   <main class="container">
-    <center><div class="logo-header">
-    </div>
-    <h2>Congresso de Desenvolvimento de Sistemas e Computação</h2>
+    <center>
+      <div class="logo-header">
+      </div>
+      <h2>Congresso de Desenvolvimento de Sistemas e Computação</h2>
+    </center>
     <section id="inicio" class="banner-section">
       <article class="banners">
         <div class="carousel-container">
           <div class="carousel" id="carousel">
             <div class="carousel-slide active">
               <img src="{{ url_for('static', filename='images/banner01.jpeg') }}" alt="Banner 1">
-               <!--
+              <!--
               <div class="carousel-caption">
                 <h2></h2>
                 <p></p>
@@ -170,7 +173,7 @@
               <img src="{{ url_for('static', filename='images/banner03.jpeg') }}" alt="Banner 3">
             </div>
           </div>
-        
+
           <button class="carousel-control prev" onclick="mudarSlide(-1)">&#10094;</button>
           <button class="carousel-control next" onclick="mudarSlide(1)">&#10095;</button>
         </div>
@@ -213,6 +216,18 @@
           width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
+      </article>
+
+      <article id="areas">
+        <h3>Áreas Temáticas</h3>
+        <ul>
+          <li>💻 Desenvolvimento e Sistemas de Informação</li>
+          <li>📊 Banco de Dados</li>
+          <li>🧠 Inteligência Artificial e Machine Learning</li>
+          <li>🔧 Engenharia de Software</li>
+          <li>📡 IoT e Tecnologias Embarcadas</li>
+          <li> 🌐 Sistemas para Internet e Computação em Nuvem</li>
+        </ul>
       </article>
 
       <article id="palestrantes">
@@ -293,6 +308,7 @@
         <p>Explore Piripiri durante sua estadia e aproveite o melhor que a cidade tem a oferecer!</p>
       </article>
     </section>
+
 
     <section id="programacao">
       <h2 class="section-title"><span class="section-icon"><i
@@ -491,9 +507,9 @@
     <section id="contato">
       <h2 class="section-title"><span class="section-icon"><i
             class="fas fa-envelope icon-header icon-header-contact"></i></span> Contato</h2>
-      
+
       <div id="flash-container"></div>
-          
+
       <article>
         <form id="contato-form" action="{{ url_for('enviar_mensagem') }}" method="POST">
           <label for="nome"><i class="fas fa-user form-icon"></i> Nome*:</label>
