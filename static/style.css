@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --primary: #007bff;
   /* Nova cor primária - ajuste conforme necessário */
@@ -343,9 +347,9 @@ nav a:hover {
   display: none;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 500px;
   position: relative;
-  background-color: var(--section-bg); /* cor de fundo para evitar transparência */
+  background-color: var(--text-color); /* cor de fundo para evitar transparência */
 }
 
 .carousel-slide img {
@@ -449,12 +453,6 @@ article {
   /* Ajuste conforme altura do header fixo */
 }
 
-article:first-child {
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
-}
-
 article:nth-child(n+2) {
   background-color: var(--day-bg);
   /* Fundo para articles genéricos */
@@ -480,8 +478,8 @@ article:nth-child(n+2) {
 
 /* Remover fundo do article de formulário se já estiver dentro de section com padding */
 #contato article {
-  background-color: transparent;
-  padding: 0;
+  background-color: var(--day-bg);
+  padding: 20px;
   margin-bottom: 0;
   box-shadow: none;
 }
@@ -542,9 +540,13 @@ main section:last-child {
 
 footer {
   background-color: var(--hd-color);
-  color: var(--text-color-hover);
   padding: 1rem;
   text-align: center;
+  color: var(--text-color-hover);
+}
+
+footer p{
+  color: var(--text-color-hover);
 }
 
 .social-media a {
@@ -555,7 +557,7 @@ footer {
 }
 
 .social-media a:hover {
-  color: var(--theme-color);
+  color: #333;
 }
 
 
@@ -921,7 +923,7 @@ footer {
 
   .organizer-list {
     list-style: none;
-    padding-left: 0;
+    padding-left: 10px;
     color: var(--text-color);
   }
 

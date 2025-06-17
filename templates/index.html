@@ -219,7 +219,7 @@
       </article>
 
       <article id="areas">
-        <h3>Áreas Temáticas</h3>
+        <h3>🔍 Áreas Temáticas</h3>
         <ul>
           <li>💻 Desenvolvimento e Sistemas de Informação</li>
           <li>📊 Banco de Dados</li>
@@ -473,8 +473,9 @@
     </section>
 
     <section id="organizacao-realizacao">
-      <h2 class="section-title"><span class="section-icon"><i
-            class="fas fa-handshake icon-header icon-header-org"></i></span> Organização e Realização</h2>
+      <h2 class="section-title">
+        <span class="section-icon"><i class="fas fa-handshake icon-header icon-header-org"></i></span> Organização e Realização
+      </h2>
       <div class="organizers-container">
         <article class="organizer-column">
           <h3><i class="fas fa-users icon-title icon-title-committee"></i> Comissão Organizadora</h3>
@@ -510,7 +511,7 @@
 
       <div id="flash-container"></div>
 
-      <article>
+      <article class="organizer-column">
         <form id="contato-form" action="{{ url_for('enviar_mensagem') }}" method="POST">
           <label for="nome"><i class="fas fa-user form-icon"></i> Nome*:</label>
           <input type="text" id="nome" name="nome" required>
