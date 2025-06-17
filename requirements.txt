@@ -8,3 +8,4 @@ jsonify
 requests
 flask-cors
 python-dotenv
+build

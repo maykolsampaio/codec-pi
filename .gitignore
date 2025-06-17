@@ -2,3 +2,7 @@
 .env
 .vscode
 .idx
+main2.py
+devserver.sh
+__pycache__
+templates/index2.html

@@ -22,10 +22,8 @@
 <body>
 
   <header>
-    <nav>
-      <ul>
-        <li class="secondary"><a href="#inicio">CODEC-PI 2025</a></li>
-      </ul>
+     <img src="static/images/codec.png" alt="Logo do Evento" width="20%" height="auto" style="margin-right: 10px;">
+     <nav>
       <ul class="menu-desktop">
         <li><a href="#inicio" class="nav-link"><i class="fa-solid fa-home icon-nav icon-nav-home"></i> Início</a></li>
         <li>
@@ -150,27 +148,26 @@
   </header>
 
   <main class="container">
+    <center><div class="logo-header">
+    </div>
+    <h2>Congresso de Desenvolvimento de Sistemas e Computação</h2></center>
     <section id="inicio" class="banner-section">
       <article class="banners">
         <div class="carousel-container">
           <div class="carousel" id="carousel">
-            <div class="carousel-slide active" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/3b/c2/a6/lugar-mais-bonito-de.jpg?w=900&h=-1&s=1');">
+            <div class="carousel-slide active">
+              <img src="{{ url_for('static', filename='images/banner01.jpeg') }}" alt="Banner 1">
+               <!--
               <div class="carousel-caption">
-                <h2>Piripiri-PI</h2>
-                <p>Caldeirão e seu cartão postal</p>
-              </div>
+                <h2></h2>
+                <p></p>
+              </div>  -->
             </div>
-            <div class="carousel-slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvKLuI8xIY3a6dpF9lbc5QW4yHUbydksomEQ&s');">
-              <div class="carousel-caption">
-                <h2>Piripiri - IFPI Campus Piripiri</h2>
-                <p>Local do Evento</p>
-              </div>
+            <div class="carousel-slide">
+              <img src="{{ url_for('static', filename='images/banner01.jpeg') }}" alt="Banner 1">
             </div>
-            <div class="carousel-slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqfrPjw5jlzmpAcxhA3H-gFoHa9IaVHq9iHw&s');">
-              <div class="carousel-caption">
-                <h2>CODEC-PI 2025</h2>
-                <p>Congresso de Desenvolvimento Científico e Tecnológico do IFPI</p>
-              </div>
+            <div class="carousel-slide">
+              <img src="{{ url_for('static', filename='images/banner03.jpeg') }}" alt="Banner 3">
             </div>
           </div>
         
@@ -183,11 +180,12 @@
         <div class="important-dates">
           <div class="date-card">
             <h4><i class="fa-solid fa-calendar-day icon-card icon-card-eventdate"></i> Realização do Evento</h4>
-            <p>10 a 11 de Setembro de 2025</p>
+            <p>22 e 23 de Setembro de 2025</p>
           </div>
           <div class="date-card">
             <h4><i class="fa-solid fa-file-upload icon-card icon-card-submissiondate"></i> Período de Submissão</h4>
-            <p>01 de Junho a 20 de Agosto de 2025</p>
+            <p><strong>Minicursos: </strong>até 12 de Julho</p>
+            <p><strong>Artigos: </strong> até 19 de Julho</p>
           </div>
           <div class="date-card">
             <h4><i class="fa-solid fa-user-plus icon-card icon-card-regdate"></i> Período de Inscrição</h4>
