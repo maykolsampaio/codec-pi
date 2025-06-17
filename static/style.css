@@ -628,6 +628,67 @@ footer p{
   color: #e0e0e0;
 }
 
+.em-breve {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 193, 7, 0.15); /* amarelo claro */
+  color: #ff9800;
+  border: 1px solid #ff9800;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.em-breve i {
+  font-size: 1.2rem;
+}
+
+.pontos-turisticos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.ponto-card {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.ponto-card:hover {
+  transform: translateY(-5px);
+}
+
+.ponto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.ponto-card h4 {
+  font-size: 1.2rem;
+  margin: 1rem 1rem 0.5rem;
+  color: var(--primary);
+}
+
+.ponto-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+
 .datas-importantes-article {
   margin-top: 2rem;
   /* Espaçamento após o banner visual */
@@ -871,8 +932,55 @@ footer p{
   gap: 2rem;
 }
 
+.comissao-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.membro-card {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.membro-card:hover {
+  transform: translateY(-5px);
+}
+
+.membro-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary);
+}
+
+.membro-card h4 {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.membro-card p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
 @media (min-width: 600px) {
   .speakers-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pontos-turisticos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .comissao-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -880,6 +988,12 @@ footer p{
 @media (min-width: 900px) {
   .speakers-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .pontos-turisticos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .comissao-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
