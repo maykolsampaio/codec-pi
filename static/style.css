@@ -294,16 +294,18 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0rem !important;
+  padding: 10px 0px !important;
   background-color: var(--hd-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header nav {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  margin-top: 20px;
 }
 
 .logo {
@@ -980,20 +982,26 @@ footer p{
     display: none;
   }
 
-  .menu-mobile {
-    display: flex;
+  header {
     flex-direction: column;
+  }
+
+  .menu-mobile {
+    display: block;
     width: 100%;
     padding: 0rem;
-    font-size: 20px;
+    margin-bottom: 0;
   }
 
   .menu-mobile summary {
-    font-size: 20px;
+    font-size: 30px;
     width: 100%;
-    padding: 0.5rem 1rem;
     text-align: center;
     color: white;
+  }
+
+  .menu-mobile summary:hover {
+    background-color: lightgrey;
   }
 
   .menu-mobile ul {
@@ -1003,17 +1011,16 @@ footer p{
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-size: medium;
   }
 
-  .menu-mobile li {
+  .menu-mobile ul li {
     width: 100%;
   }
 
-  .menu-mobile li a {
+  .menu-mobile ul li a {
     display: block;
     width: 100%;
-    padding: 1rem;
-    font-size: 18px;
     text-align: center;
     text-decoration: none;
   }
@@ -1022,22 +1029,30 @@ footer p{
     background-color: transparent;
   }
 
-  .menu-mobile details {
+  .menu-mobile ul li details {
     width: 100%;
   }
 
-  .menu-mobile details ul {
+  .menu-mobile ul li details summary {
+    font-size: medium;
+    color: lightgrey;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .menu-mobile ul li details ul {
     width: 100%;
     display: flex;
+    margin: 0;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    background-color: lightgrey;
   }
 
-  .menu-mobile details ul li a {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .menu-mobile ul li details ul li a {
     text-align: center;
+    font-size: medium;
+    color: black;
     /* mantém centralizado mesmo com padding lateral */
   }
 
